@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="mystyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <div class="header">
+        <h1> Factor Analysis (Population Growth VS Happiness Score VS Gender Inequality) </h1>
+      </div>
+
+      <div class="col-6 col-s-9">
+        <h1>Happiness score of each country</h1>
+        <p>Choose a country from drop down menu button the click on Click Me!. You will see three different factors realted to each country.Hover over each line to see the value. If you click on each legend appeared you can hide the factors and compare specific countries you want! </p>
+        
+      </div>
+
+
+      <div class="row">
+        <div class="col-3 col-s-3 menu">
+          <ul>
+            
+            <button type="button"  id="theButton1"  >Click Me!</button> 
+            <button type="button"  id= "reloadButton" onClick="window.location.reload();">Refresh Page</button>
+                
+            
+          </ul>
+        </div>
+
+
+      <div id="my_dataviz">               
+            <div class="custom-select" style="width:250px;" style="height:200px;"> 
+    
+            <select name= Countries id="ViewBy">
+            <option value="Albania.csv" selected="selected">Albania</option>
+            <option value="Algeria.csv" >Algeria</option>
+            <option value="Argentina.csv">Argentina</option>
+            <option value="Australia.csv">Australia</option>
+            <option value="Austria.csv">Austria</option>
+            <option value="Bangladesh.csv" >Bangladesh</option>
+            <option value="Belgium.csv">Belgium</option>
+            <option value="Belize.csv">Belize</option>
+            <option value="Benin.csv">Benin</option>
+            <option value="Bolivia.csv" >Bolivia</option>
+            <option value="Botswana.csv">Botswana</option>
+            <option value="Brazil.csv">Brazil</option>
+            <option value="Bulgaria.csv">Bulgaria</option>
+            <option value="Burundi.csv" >Burundi</option>
+            <option value="Cambodia.csv">Cambodia</option>
+            <option value="Cameroon.csv">Cameroon</option>
+            <option value="Canada.csv">Canada</option>
+            <option value="Central African Republic.csv" >Central African Republic</option>
+            <option value="Chile.csv">Chile</option>
+            <option value="Colombia.csv">Colombia</option>
+            <option value="Costa Rica.csv">Costa Rica</option>
+            <option value="Croatia.csv">Croatia</option>
+            <option value="Cyprus.csv">Cyprus</option>
+            <option value="Czech Republic.csv">Czech Republic</option>
+            <option value="Denmark.csv" >Denmark</option>
+            <option value="Dominican Republic.csv">Dominican Republic</option>
+            <option value="Ecuador.csv">Ecuador</option>
+            <option value="El Salvador.csv">El Salvador</option>
+            <option value="Estonia.csv" >Estonia</option>
+            <option value="Finland.csv">Finland</option>
+            <option value="France.csv">France</option>
+            <option value="Gabon.csv">Gabon</option>
+            <option value="Germany.csv" >Germany</option>
+            <option value="Ghana.csv">Ghana</option>
+            <option value="Greece.csv">Greece</option>
+            <option value="Guatemala.csv">Guatemala</option>
+            <option value="Haiti.csv" >Haiti</option>
+            <option value="Honduras.csv">Honduras</option>
+            <option value="Hungary.csv">Hungary</option>
+            <option value="Iceland.csv">Iceland</option>
+            <option value="India.csv" >India</option>
+            <option value="Indonesia.csv">Indonesia</option>
+            <option value="Iraq.csv">Iraq</option>
+            <option value="Ireland.csv">Ireland</option>
+            <option value="Israel.csv" >Israel</option>
+            <option value="Italy.csv">Italy</option>
+            <option value="Jamaica.csv">Jamaica</option>
+            <option value="Japan.csv">Japan</option>
+            <option value="Kazakhstan.csv" >Kazakhstan</option>
+            <option value="Kenya.csv">Kenya</option>
+            <option value="Kuwait.csv">Kuwait</option>
+            <option value="Latvia.csv">Latvia</option>
+            <option value="Lesotho.csv" >Lesotho</option>
+            <option value="Liberia.csv">Liberia</option>
+            <option value="Libya.csv">Libya</option>
+            <option value="Lithuania.csv">Lithuania<Lithuania/option>
+            <option value="Luxembourg.csv">Luxembourg</option>
+            <option value="Malawi.csv">Malawi</option>
+            <option value="Malaysia.csv">Malaysia</option>
+            <option value="Mali.csv">Mali</option>
+            <option value="Malta.csv">Malta</option>
+            <option value="Mauritania.csv">Mauritania</option>
+            <option value="Mauritius.csv">Mauritius</option>
+            <option value="Mexico.csv">Mexico</option>
+            <option value="Moldova.csv">Moldova</option>
+            <option value="Mongolia.csv">Mongolia</option>
+            <option value="Morocco.csv">Morocco</option>
+            <option value="Austria.csv">Austria</option>
+            <option value="Mozambique.csv">Mozambique</option>
+            <option value="Myanmar.csv">Myanmar</option>
+            <option value="Namibia.csv">Namibia</option>
+            <option value="Nepal.csv">Nepal</option>
+            <option value="Netherlands.csv">Netherlands</option>
+            <option value="New Zealand.csv">New Zealand</option>
+            <option value="Nicaragua.csv">Nicaragua</option>
+            <option value="Niger.csv">Niger</option>
+            <option value="Norway.csv">Norway</option>
+            <option value="Pakistan.csv">Pakistan</option>
+            <option value="Panama.csv">Panama</option>
+            <option value="Paraguay.csv">Paraguay</option>
+            <option value="Peru.csv">Peru</option>
+            <option value="Philippins.csv">Philippins</option>
+            <option value="Poland.csv">Poland</option>
+            <option value="Portugal.csv">Portugal</option>
+            <option value="Qatar.csv">Qatar</option>
+            <option value="Romania.csv">Romania</option>
+            <option value="Rwanda.csv">Rwanda</option>
+            <option value="Saudi Arabia.csv">Saudi Arabia</option>
+            <option value="Senegal.csv">Senegal</option>
+            <option value="Sierra Leone.csv">Sierra Leone</option>
+            <option value="Singapore.csv">Singapore</option>
+            <option value="Slovenia.csv">Slovenia</option>
+            <option value="South Africa.csv">South Africa</option>
+            <option value="Spain.csv">Spain</option>
+            <option value="Sri Lanka.csv">Sri Lanka</option>
+            <option value="Sudan.csv">Sudan</option>
+            <option value="Sweden.csv">Sweden</option>
+            <option value="Switzerland.csv">Switzerland</option>
+            <option value="Tajikistan.csv">Tajikistan</option>
+            <option value="Tanzania.csv">Tanzania</option>
+            <option value="Thailand.csv">Thailand</option>
+            <option value="Togo.csv">Togo</option>
+            <option value="Trinidad and Tobago.csv">Trinidad and Tobago</option>
+            <option value="Tunisia.csv">Tunisia</option>
+            <option value="Turkey.csv">Turkey</option>
+            <option value="Uganda.csv">Uganda</option>
+            <option value="Ukraine.csv">Ukraine</option>
+            <option value="United Arab Emirates.csv">United Arab Emirates</option>
+            <option value="United Kingdom.csv">United Kingdom</option>
+            <option value="United States.csv">United States</option>
+            <option value="Uruguay.csv">Uruguay</option>
+            <option value="Vietnam.csv">Vietnam</option>
+            <option value="Zambia.csv">Zambia</option>
+            <option value="Zimbabwe.csv">Zimbabwe</option>
+          
+            
+            
+          </select>
+         
+        </div>                               
+    </div>
+
+
+<div class="footer">
+  <p>By Motahareh Fard</p>
+</div>
+
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+
+<body>
+
+    <script>
+        var x, i, j, l, ll, selElmnt, a, b, c;
+        /*look for any elements with the class "custom-select":*/
+        x = document.getElementsByClassName("custom-select");
+        l = x.length;
+        for (i = 0; i < l; i++) {
+          selElmnt = x[i].getElementsByTagName("select")[0];
+          ll = selElmnt.length;
+          /*for each element, create a new DIV that will act as the selected item:*/
+          a = document.createElement("DIV");
+          a.setAttribute("class", "select-selected");
+          a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+          x[i].appendChild(a);
+          /*for each element, create a new DIV that will contain the option list:*/
+          b = document.createElement("DIV");
+          b.setAttribute("class", "select-items select-hide");
+          for (j = 1; j < ll; j++) {
+            /*for each option in the original select element,
+            create a new DIV that will act as an option item:*/
+            c = document.createElement("DIV");
+            c.innerHTML = selElmnt.options[j].innerHTML;
+            c.addEventListener("click", function(e) {
+                /*when an item is clicked, update the original select box,
+                and the selected item:*/
+                var y, i, k, s, h, sl, yl;
+                s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                sl = s.length;
+                h = this.parentNode.previousSibling;
+                for (i = 0; i < sl; i++) {
+                  if (s.options[i].innerHTML == this.innerHTML) {
+                    s.selectedIndex = i;
+                    h.innerHTML = this.innerHTML;
+                    y = this.parentNode.getElementsByClassName("same-as-selected");
+                    yl = y.length;
+                    for (k = 0; k < yl; k++) {
+                      y[k].removeAttribute("class");
+                    }
+                    this.setAttribute("class", "same-as-selected");
+                    break;
+                  }
+                }
+                h.click();
+            });
+            b.appendChild(c);
+          }
+          x[i].appendChild(b);
+          a.addEventListener("click", function(e) {
+              /*when the select box is clicked, close any other select boxes,
+              and open/close the current select box:*/
+              e.stopPropagation();
+              closeAllSelect(this);
+              this.nextSibling.classList.toggle("select-hide");
+              this.classList.toggle("select-arrow-active");
+            });
+        }
+        function closeAllSelect(elmnt) {
+          /*a function that will close all select boxes in the document,
+          except the current select box:*/
+          var x, y, i, xl, yl, arrNo = [];
+          x = document.getElementsByClassName("select-items");
+          y = document.getElementsByClassName("select-selected");
+          xl = x.length;
+          yl = y.length;
+          for (i = 0; i < yl; i++) {
+            if (elmnt == y[i]) {
+              arrNo.push(i)
+            } else {
+              y[i].classList.remove("select-arrow-active");
+            }
+          }
+          for (i = 0; i < xl; i++) {
+            if (arrNo.indexOf(i)) {
+              x[i].classList.add("select-hide");
+            }
+          }
+        }
+        /*if the user clicks anywhere outside the select box,
+        then close all select boxes:*/
+        document.addEventListener("click", closeAllSelect);
+        </script>
+        
+
+
+
+   
+<script type="text/javascript">
+jQuery(function($) {
+
+$("#theButton1").click(function() {
+
+    var e = document.getElementById("ViewBy");
+    var happinessFile = e.value;
+   console.log(happinessFile);
+
+   plot_hist(happinessFile)
+
+});
+
+});
+
+
+// set the dimensions and margins of the graph
+var margin = {top: 0, right: 100, bottom: 50, left: 700},
+    width = 2000 - margin.left - margin.right,
+    height = 800 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg = d3.select("#my_dataviz")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+//Read the data
+
+function plot_hist(file) {
+d3.csv(file, function(data) {
+
+    // List of groups (here I have one group per column)
+    var allGroup = ["genderIndex", "population", "happinessScore"]
+
+    // Reformat the data: we need an array of arrays of {x, y} tuples
+    var dataReady = allGroup.map( function(grpName) { // .map allows to do something for each element of the list
+      return {
+        name: grpName,
+        values: data.map(function(d) {
+          return {year: d.year-2014, value: +d[grpName]};
+        })
+      };
+    });
+   
+
+    // A color scale: one color for each group
+    var myColor = d3.scaleOrdinal()
+      .domain(allGroup)
+      .range(d3.schemePaired);
+
+    // Add X axis --> it is a date format
+    var year = ["2015","2016","2017","2018","2019","2020"];
+    var x = d3.scaleOrdinal()
+      .domain(year)
+      .range([0, 150,300,450,600,750]);
+    svg.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+
+
+
+
+
+
+      
+
+    // Add Y axis
+    var y = d3.scaleLinear()
+      .domain( [-4,4])
+      .range([ height, 100 ]);
+    svg.append("g")
+    .call(d3.axisLeft(y));
+
+
+    // Add the lines
+    var line = d3.line()
+      .x(function(d) { return x(+d.year) })
+      .y(function(d) { return y(+d.value) })
+    svg.selectAll("myLines")
+      .data(dataReady)
+      .enter()
+      .append("path")
+        .attr("class", function(d){ return d.name })
+        .attr("d", function(d){ return line(d.values) } )
+        .attr("stroke", function(d){ return myColor(d.name) })
+        .style("stroke-width", 6)
+        .style("fill", "none")
+
+
+
+
+
+
+// Define the div for the tooltip
+var div = d3.select("body").append("div")	
+    .attr("class", "tooltip")				
+    .style("opacity", 0);
+
+
+
+
+
+
+
+    // Add the points
+    svg
+      // First we need to enter in a group
+      .selectAll("myDots")
+      .data(dataReady)
+      .enter()
+        .append('g')
+        .style("fill", function(d){ return myColor(d.name) })
+        .attr("class", function(d){ return d.name })
+      // Second we need to enter in the 'values' part of this group
+      .selectAll("myPoints")
+      .data(function(d){ return d.values })
+      .enter()
+      .append("circle")
+        .attr("cx", function(d) { return x(d.year) } )
+        .attr("cy", function(d) { return y(d.value) } )
+        .attr("r", 8)
+        .attr("stroke", "white")
+
+
+
+        .on("mouseover", function(d) {		
+            div.transition()		
+                .duration(200)		
+                .style("opacity", .9);		
+            div	.html("Value" + "<br/>"  + d.value)	
+                .style("left", (d3.event.pageX) + "px")		
+                .style("top", (d3.event.pageY - 28) + "px");	
+            })					
+        .on("mouseout", function(d) {		
+            div.transition()		
+                .duration(500)		
+                .style("opacity", 0);
+                
+
+            });
+
+
+
+        
+
+    // Add a label at the end of each line
+    svg
+      .selectAll("myLabels")
+      .data(dataReady)
+      .enter()
+        .append('g')
+        .append("text")
+          .attr("class", function(d){ return d.name })
+          .datum(function(d) { return {name: d.name, value: d.values[d.values.length - 1]}; }) // keep only the last value of each time series
+          .attr("transform", function(d) { return "translate(" + x(d.value.year) + "," + y(d.value.value) + ")"; }) // Put the text at the position of the last point
+          .attr("x", 200) // shift the text a bit more right
+          .text(function(d) { return d.name; })
+          .style("fill", function(d){ return myColor(d.name) })
+          .style("font-size", "25px")
+          
+
+    // Add a legend (interactive)
+    svg
+      .selectAll("myLegend")
+      .data(dataReady)
+      .enter()
+        .append('g')
+        .append("text")
+          .attr('x', -400)
+          .attr('y', function(d,i){ return 20 + i*50})
+          .text(function(d) { return d.name; })
+          .style("fill", function(d){ return myColor(d.name) })
+          .style("font-size", "25px")
+        
+        .on("click", function(d){
+          // is the element currently visible ?
+          currentOpacity = d3.selectAll("." + d.name).style("opacity")
+          // Change the opacity: from 0 to 1 or from 1 to 0
+          d3.selectAll("." + d.name).transition().style("opacity", currentOpacity == 1 ? 0:1)
+
+        })
+
+
+
+        const reloadtButton = document.querySelector("#reload");
+// Reload everything:
+function reload() {
+    reload = location.reload();
+}
+// Event listeners for reload
+reloadButton.addEventListener("click", reload, false);
+
+})
+
+}
+
+</script>
+</body>
+</html>
